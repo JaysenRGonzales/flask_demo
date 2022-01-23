@@ -8,16 +8,23 @@ def calc():
     if request.method == "POST" and request.form.get("money") != '':
         #int(request.form.get("money")) > 1:
         amount = request.form.get("money")
+        
         #Integrate API for pulling live conversion 
+        if amount < 0:
+            err = "Enter number greater than 1"
+            return render_template("home.html",err =err)
         dict1 = {}
         cad = round(float(amount) * 1.26, 2)
         peso = round(float(amount) * 20.47 ,2)
         euro = round(float(amount) * 0.88 , 2)
         
+        
         dict1["USD"] = amount
         dict1["CAN"] = cad
         dict1["Peso"] = peso
         dict1["Euro"] = euro
+
+        
 
         
         return render_template("home.html",dict1=dict1)
