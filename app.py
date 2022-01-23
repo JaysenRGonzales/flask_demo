@@ -10,9 +10,6 @@ def calc():
         amount = request.form.get("money")
         
         #Integrate API for pulling live conversion 
-        if amount < 0:
-            err = "Enter number greater than 1"
-            return render_template("home.html",err =err)
         dict1 = {}
         cad = round(float(amount) * 1.26, 2)
         peso = round(float(amount) * 20.47 ,2)
