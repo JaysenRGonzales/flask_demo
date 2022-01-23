@@ -4,7 +4,7 @@ app = Flask(__name__)
 
 @app.route('/',methods =["GET", "POST"])
 def calc():
-    
+    #Verify submit and # was entered
     if request.method == "POST" and request.form.get("money") != '':
         #int(request.form.get("money")) > 1:
         amount = request.form.get("money")
