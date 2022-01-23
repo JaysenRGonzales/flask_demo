@@ -1,4 +1,8 @@
+body{
+    background-color:#6dc51c;
+}
 h1 {
+    color: white;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -6,6 +10,7 @@ h1 {
   }
 
 form{
+    color: white;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -13,6 +18,8 @@ form{
 }
 
 table{
+    font-size: 24px;
+    color: white;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -21,6 +28,7 @@ table{
 }
 
 td, th {
+    color: white;
     border: 1px solid #999;
     padding: 0.5rem;
     text-align: left;
