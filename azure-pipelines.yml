@@ -14,7 +14,11 @@ stages:
   jobs:
   - job: BuildJob
     steps:
-    - script: echo Building!
+    - task: UsePythonVersion@0
+      inputs:
+        versionSpec: '3.x'
+        addToPath: true
+        architecture: 'x64'
 - stage: Test
   jobs:
   - job: TestOnWindows
@@ -38,5 +42,5 @@ stages:
         WebAppName: 'Q2-web-app-exercise'
         packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
         RuntimeStack: 'PYTHON|3.7'
-
     - task: PublishBuildArtifacts@1
+    
