@@ -38,3 +38,5 @@ stages:
         WebAppName: 'Q2-web-app-exercise'
         packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
         RuntimeStack: 'PYTHON|3.7'
+
+    - task: PublishBuildArtifacts@1
