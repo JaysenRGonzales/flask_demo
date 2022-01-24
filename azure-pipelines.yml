@@ -14,7 +14,8 @@ variables:
   webAppName: 'Q2-web-app-exercise'
 
   # Agent VM image name
-  vmImageName: 'ubuntu-latest'
+  pool:
+      vmImage: ubuntu-latest
 
   # Environment name
   environmentName: 'Q2-web-app-exercise'
