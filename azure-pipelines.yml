@@ -18,7 +18,7 @@ stages:
       inputs:
         versionSpec: '3.x'
         addToPath: true
-        architecture: 'x64'
+        
 - stage: Test
   jobs:
   - job: TestOnWindows
