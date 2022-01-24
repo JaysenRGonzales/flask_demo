@@ -18,10 +18,10 @@ stages:
       inputs:
         versionSpec: '3.x'
         addToPath: true
-        architecture:'x86';
+        architecture:'x86':
         
 - stage: Test
-jobs:
+  jobs:
   - job: TestOnWindows
     steps:
     - script: echo Testing on Windows!
