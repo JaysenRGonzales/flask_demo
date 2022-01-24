@@ -18,6 +18,7 @@ stages:
       inputs:
         versionSpec: '3.x'
         addToPath: true
+        architecture:'x86'
         
 - stage: Test
   jobs:
