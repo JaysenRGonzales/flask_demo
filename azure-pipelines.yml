@@ -28,4 +28,3 @@ stages:
   - job: Deploy
     steps:
     - script: echo Deploying the code!
-EOF
