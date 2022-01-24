@@ -7,9 +7,8 @@
 pool: mypool
 trigger:
   branches:
-    include:
-    - '*'
-- main
+    include: 
+    - master
 stages:
 - stage: Build
   jobs:
