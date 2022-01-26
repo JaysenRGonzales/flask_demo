@@ -25,9 +25,9 @@ stages:
   - job: RunTestwithTox
     steps:
       - task: UsePythonVersion@0
-        displayName: 'Use Python 3.7.3'
+        displayName: 'Use Python 3.7'
         inputs:
-          versionSpec: 3.7.3 
+          versionSpec: 3.7 
           
       
       - script: pip3 install tox
