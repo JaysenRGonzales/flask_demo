@@ -27,7 +27,7 @@ stages:
       - task: UsePythonVersion@0
         displayName: 'Use Python 3.7'
         inputs:
-          versionSpec: 3.7 
+          versionSpec: $(System.DefaultWorkingDirectory)/Python/3.7 
           
       
       - script: pip3 install tox
