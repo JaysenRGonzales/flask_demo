@@ -1,8 +1,3 @@
-# Python to Linux Web App on Azure
-# Build your Python project and deploy it to Azure as a Linux Web App.
-# Change python version to one thats appropriate for your application.
-# https://docs.microsoft.com/azure/devops/pipelines/languages/python
- 
 ## Create a new Azure repo and below file in it.
 pool: mypool
 trigger:
@@ -27,7 +22,6 @@ stages:
     - script: echo "Running Test on Windows"
       
     - script: echo "Running Test on Linux"
-
 
 
 - stage: Deploy
@@ -56,7 +50,3 @@ stages:
         WebAppName: 'Q2-web-app-exercise'
         packageForLinux: $(Build.ArtifactStagingDirectory)/Application$(Build.BuildId).zip
         RuntimeStack: 'PYTHON|3.7'
-    
-
-
-    
