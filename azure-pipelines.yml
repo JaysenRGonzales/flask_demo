@@ -22,14 +22,13 @@ stages:
         
 - stage: Test
   jobs:
-  - job: RunTestwithTox
+  - job: RunFlask
     steps:
+    - script: echo "Running Test on Windows"
+      
+    - script: echo "Running Test on Linux"
 
-      - script: pip3 install tox
-        displayName: 'Install Tox'
 
-      - script: tox -e py
-        displayName: 'Run Tox'
 
 - stage: Deploy
   jobs:
