@@ -24,12 +24,7 @@ stages:
   jobs:
   - job: RunTestwithTox
     steps:
-      - task: UsePythonVersion@0
-        displayName: 'Use Python 3.7'
-        inputs:
-          versionSpec: /Users/jaysengonzales/myagent/_work/_tool/Python/ 
-          
-      
+
       - script: pip3 install tox
         displayName: 'Install Tox'
 
