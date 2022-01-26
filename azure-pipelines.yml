@@ -14,8 +14,8 @@ stages:
   jobs:
   - job: BuildJob
     steps:
-    - script: python -m pip install --upgrade pip setuptools wheel
-    - script: pip install -r $(System.DefaultWorkingDirectory)/requirements.txt
+    - script: python3 -m pip install --upgrade pip setuptools wheel
+    - script: pip3 install -r $(System.DefaultWorkingDirectory)/requirements.txt
   displayName: 'Install tools and Requirements'
     
         
