@@ -56,7 +56,7 @@ stages:
         WebAppName: 'Q2-web-app-exercise'
         packageForLinux: $(Build.ArtifactStagingDirectory)/Application$(Build.BuildId).zip
         RuntimeStack: 'PYTHON|3.7'
-    - task: PublishBuildArtifacts@1
+    
 
 
     
