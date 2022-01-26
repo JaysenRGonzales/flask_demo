@@ -37,13 +37,26 @@ stages:
     pool: 
       mypool
     steps:
+    - task: ArchiveFiles@2
+      inputs:
+        rootFolderOrFile: '$(Build.SourcesDirectory)'
+        includeRootFolder: false
+        archiveType: 'zip'
+        archiveFile: '$(Build.ArtifactStagingDirectory)/Application$(Build.BuildId).zip'
+        replaceExistingArchive: true
+        verbose: # (no value); this input is optional
+    - publish: $(Build.ArtifactStagingDirectory)/Application$(Build.BuildId).zip
+      displayName: 'Upload package'
+      artifact: drop
     - task: AzureRmWebAppDeployment@4
       inputs:
         ConnectionType: 'AzureRM'
         azureSubscription: 'Azure subscription 1 (ec7f7f93-527d-47ba-a918-ed051b37866a)'
         appType: 'webAppLinux'
         WebAppName: 'Q2-web-app-exercise'
-        packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
+        packageForLinux: $(Pipeline.Workspace)/drop/$(Build.BuildId).zip
         RuntimeStack: 'PYTHON|3.7'
     - task: PublishBuildArtifacts@1
+
+
     
