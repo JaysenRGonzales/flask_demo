@@ -16,7 +16,8 @@ stages:
     steps:
     - script: python3 -m pip install --upgrade pip setuptools wheel
     - script: pip3 install -r $(System.DefaultWorkingDirectory)/requirements.txt
-  displayName: 'Install tools and Requirements'
+    - script: flask run
+  displayName: 'Build'
     
         
 - stage: Test
@@ -24,9 +25,9 @@ stages:
   - job: RunTestwithTox
     steps:
       - task: UsePythonVersion@0
-        displayName: 'Use Python $(python.version)'
+        displayName: 'Use Python 3.7'
         inputs:
-          versionSpec: '$(python.version)'
+          versionSpec: '3.7'
 
       - script: pip install tox
         displayName: 'Install Tox'
