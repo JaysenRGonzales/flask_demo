@@ -54,7 +54,7 @@ stages:
         azureSubscription: 'Azure subscription 1 (ec7f7f93-527d-47ba-a918-ed051b37866a)'
         appType: 'webAppLinux'
         WebAppName: 'Q2-web-app-exercise'
-        packageForLinux: $(Pipeline.Workspace)/drop/$(Build.BuildId).zip
+        packageForLinux: $(Build.ArtifactStagingDirectory)/Applications$(Build.BuildId).zip
         RuntimeStack: 'PYTHON|3.7'
     - task: PublishBuildArtifacts@1
 
