@@ -16,7 +16,7 @@ stages:
     steps:
     - script: python3 -m pip install --upgrade pip setuptools wheel
     - script: pip3 install -r $(System.DefaultWorkingDirectory)/requirements.txt
-    - script: flask run
+    
   displayName: 'Build'
     
         
@@ -29,7 +29,7 @@ stages:
         inputs:
           versionSpec: '3.7' 
           
-      - script: flask run
+      
       - script: pip3 install tox
         displayName: 'Install Tox'
 
